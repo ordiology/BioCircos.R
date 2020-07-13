@@ -48,7 +48,7 @@ HTMLWidgets.widget({
           svgHeight : height,
           chrPad : opts.chrPad,
           innerRadius: 0.7*maxRadius,
-          outerRadius: 0.8*maxRadius,
+          outerRadius: 0.725*maxRadius,
           zoom : opts.zoom, // Allow zoom and translation
 
           // SNP interaction options
