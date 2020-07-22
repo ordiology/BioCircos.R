@@ -2761,10 +2761,6 @@ var BioCircos;
 
             if(self.settings.SNPMouseOverDisplay==true){
                 SNPMouseOn.on("mouseover",function(d){
-                  console.log("THIS IS WHAT YOU WANT")
-                  console.log(d)
-                  console.log("*******************************")
-                  console.log(SNPMouseOn)
                       SNPMouseOnTooltip.html(self.settings.SNPMouseOverTooltipsHtml01+d.snp_chr+self.settings.SNPMouseOverTooltipsHtml02+d.snp_pos+self.settings.SNPMouseOverTooltipsHtml03+d.snp_val+self.settings.SNPMouseOverTooltipsHtml04+d.snp_des+self.settings.SNPMouseOverTooltipsHtml05)
                        .style("left", (d3.event.pageX) + "px")
                        .style("top", (d3.event.pageY + 20) + "px")
@@ -2775,7 +2771,6 @@ var BioCircos;
                        .style("padding", self.settings.SNPMouseOverTooltipsPadding)
                        .style("border-radius", self.settings.SNPMouseOverTooltipsBorderRadius)
                        .style("opacity", self.settings.SNPMouseOverTooltipsOpacity)
-                       .style("display", "")
                     d3.select(this)
                        .style("r",  function(d,i) { if(self.settings.SNPMouseOverCircleSize=="none"){return "";}else{return self.settings.SNPMouseOverCircleSize;} })
                        .style("fill",  function(d,i) { if(self.settings.SNPMouseOverColor=="none"){return "";}else{return self.settings.SNPMouseOverColor;} })
@@ -2861,7 +2856,7 @@ var BioCircos;
             if(self.settings.SNPMouseOutDisplay==true){
                SNPMouseOn.on("mouseout",function(d){
                    SNPMouseOnTooltip.style("opacity",0.0)
-                   .style("display","none");
+                       .style("display","none");
                    d3.select(this)
                        .transition()
                        .duration(self.settings.SNPMouseOutAnimationTime)
