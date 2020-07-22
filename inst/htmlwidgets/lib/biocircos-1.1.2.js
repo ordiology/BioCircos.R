@@ -2771,6 +2771,7 @@ var BioCircos;
                        .style("padding", self.settings.SNPMouseOverTooltipsPadding)
                        .style("border-radius", self.settings.SNPMouseOverTooltipsBorderRadius)
                        .style("opacity", self.settings.SNPMouseOverTooltipsOpacity)
+                       .style("display","")
                     d3.select(this)
                        .style("r",  function(d,i) { if(self.settings.SNPMouseOverCircleSize=="none"){return "";}else{return self.settings.SNPMouseOverCircleSize;} })
                        .style("fill",  function(d,i) { if(self.settings.SNPMouseOverColor=="none"){return "";}else{return self.settings.SNPMouseOverColor;} })
