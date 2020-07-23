@@ -41,6 +41,8 @@
 #' @param SNPMouseOverColor Color of the SNP point when hovered by the mouse, in hexadecimal RGB format.
 #' @param SNPMouseOverCircleSize Size of the SNP point when hovered by the mouse.
 #' @param SNPMouseOverCircleOpacity Opacity of the SNP point when hovered by the mouse.
+#' @param SNPMouseOverCircleStrokeColor Color of the SNP point stroke when hovered by the mouse.
+#' @param SNPMouseOverCircleStrokeSize Size of the SNP point stroke when hovered by the mouse.
 #' 
 #' @param SNPMouseOutDisplay Hide tooltip when mouse is not hovering a SNP point anymore.
 #' @param SNPMouseOutColor Color of the SNP point when mouse is not hovering a SNP point anymore, in hexadecimal
@@ -168,6 +170,8 @@ BioCircos <- function(tracklist = BioCircosTracklist(),
   zoom = TRUE, TEXTModuleDragEvent = FALSE,
   SNPMouseOverDisplay = TRUE, SNPMouseOverColor = "#FF0000", SNPMouseOverCircleSize = 3,
   SNPMouseOverCircleOpacity = 0.9,
+  SNPMouseOverCircleStrokeColor = "#F26223",
+  SNPMouseOverCircleStrokeWidth = 1,
   SNPMouseOutDisplay = TRUE, SNPMouseOutColor = "none",
   SNPMouseOverTooltipsHtml01 = "Chromosome: ", SNPMouseOverTooltipsHtml02 = "<br/>Position: ",
   SNPMouseOverTooltipsHtml03 = "<br/>Value: ", SNPMouseOverTooltipsHtml04 = "<br/>",  SNPMouseOverTooltipsHtml05 = "",
@@ -317,8 +321,8 @@ BioCircos <- function(tracklist = BioCircosTracklist(),
     SNPMouseOverColor = SNPMouseOverColor,
     SNPMouseOverCircleSize = SNPMouseOverCircleSize,
     SNPMouseOverCircleOpacity = SNPMouseOverCircleOpacity,
-    SNPMouseOverCircleStrokeColor = "#F26223",
-    SNPMouseOverCircleStrokeWidth = 1,
+    SNPMouseOverCircleStrokeColor = SNPMouseOverCircleStrokeColor,
+    SNPMouseOverCircleStrokeWidth = SNPMouseOverCircleStrokeWidth,
     SNPMouseOverTooltipsHtml01 = SNPMouseOverTooltipsHtml01,
     SNPMouseOverTooltipsHtml02 = SNPMouseOverTooltipsHtml02,
     SNPMouseOverTooltipsHtml03 = SNPMouseOverTooltipsHtml03,
