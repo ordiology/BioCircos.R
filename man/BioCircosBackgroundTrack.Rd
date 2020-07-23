@@ -4,9 +4,15 @@
 \alias{BioCircosBackgroundTrack}
 \title{Create a background track to be added to a BioCircos tracklist}
 \usage{
-BioCircosBackgroundTrack(trackname, fillColors = "#EEEEFF",
-  borderColors = "#000000", maxRadius = 0.9, minRadius = 0.5,
-  borderSize = 0.3, ...)
+BioCircosBackgroundTrack(
+  trackname,
+  fillColors = "#EEEEFF",
+  borderColors = "#000000",
+  maxRadius = 0.9,
+  minRadius = 0.5,
+  borderSize = 0.3,
+  ...
+)
 }
 \arguments{
 \item{trackname}{The name of the new track.}

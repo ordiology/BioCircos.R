@@ -4,8 +4,17 @@
 \alias{BioCircosTextTrack}
 \title{Create a Text track to be added to a BioCircos tracklist}
 \usage{
-BioCircosTextTrack(trackname, text, x = -0.15, y = 0, size = "1.2em",
-  weight = "bold", opacity = 1, color = "#000000", ...)
+BioCircosTextTrack(
+  trackname,
+  text,
+  x = -0.15,
+  y = 0,
+  size = "1.2em",
+  weight = "bold",
+  opacity = 1,
+  color = "#000000",
+  ...
+)
 }
 \arguments{
 \item{trackname}{The name of the new track.}
