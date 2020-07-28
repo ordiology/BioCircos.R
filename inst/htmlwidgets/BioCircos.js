@@ -469,3 +469,28 @@ HTMLWidgets.widget({
     };
   }
 });
+
+//------------------------------------------------------------------------------------------------------------------------
+if(HTMLWidgets.shinyMode) Shiny.addCustomMessageHandler("brintTest", function(message){
+
+  // log("setEdgeAttributes requested")
+
+  // var attributeName = message.attributeName;
+  // var sourceNodes = message.sourceNodes;
+  // var targetNodes = message.targetNodes;
+  // var interactions = message.interactions;
+  // var values = message.values
+  console.log(message.msg)
+  console.log(message.msg2)
+//  for(var i=0; i < sourceNodes.length; i++){
+//     var id = sourceNodes[i] + "-(" + interactions[i] + ")-" + targetNodes[i];
+//     // log("edge id: " + id)
+//     var edge = self.cyj.getElementById(id)
+//     // log(edge)
+//     if(edge != undefined){
+//        // log("setting edge " + attributeName + " to " + values[i])
+//        edge.data({[attributeName]: values[i]})
+//        }
+//     } // for i
+    
+}) // brintTest

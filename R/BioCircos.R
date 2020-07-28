@@ -1134,3 +1134,9 @@ BioCircosTracklist <- function(){
   }
   return(colVar)
 }
+
+brintTest <- function(session, msg, msg2) {
+  session$sendCustomMessage(type="brintTest",
+                             message=list(msg=msg,
+                                          msg2=msg2))
+}
