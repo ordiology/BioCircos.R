@@ -528,3 +528,28 @@ if(HTMLWidgets.shinyMode) Shiny.addCustomMessageHandler("setCircLinkVisibility",
 
 
 }) // setCircLinkVisibility
+
+if(HTMLWidgets.shinyMode) Shiny.addCustomMessageHandler("setCircInvisible", function(message){
+    try {
+      ///
+      //have to skip the first one, as that's ALL of the links... 
+      var svg = d3.select(BioCircos01.target)
+      var x = svg.selectAll(".BioCircosLINK")
+      
+      for (var i = 1; i < x[0].length; i++) {
+        ///
+        x[0][i].style.visibility = "hidden";
+      }
+      
+      var svg = d3.select(BioCircos01.target)
+      var x = svg.selectAll("#BioCircosSNP")
+      for (var i = 0; i < x[0].length; i++) {
+        ///
+        x[0][i].style.visibility = "hidden";
+      }
+    } catch {}
+
+
+}) // setCircInvisible
+
+
