@@ -2761,7 +2761,8 @@ var BioCircos;
 
             if(self.settings.SNPMouseOverDisplay==true){
                 SNPMouseOn.on("mouseover",function(d){
-                      SNPMouseOnTooltip.html(self.settings.SNPMouseOverTooltipsHtml01+d.snp_chr+self.settings.SNPMouseOverTooltipsHtml02+d.snp_pos+self.settings.SNPMouseOverTooltipsHtml03+d.snp_val+self.settings.SNPMouseOverTooltipsHtml04+d.snp_des+self.settings.SNPMouseOverTooltipsHtml05)
+                      // SNPMouseOnTooltip.html(self.settings.SNPMouseOverTooltipsHtml01+d.snp_chr+self.settings.SNPMouseOverTooltipsHtml02+d.snp_pos+self.settings.SNPMouseOverTooltipsHtml03+d.snp_val+self.settings.SNPMouseOverTooltipsHtml04+d.snp_des+self.settings.SNPMouseOverTooltipsHtml05)
+                      SNPMouseOnTooltip.html(self.settings.SNPMouseOverTooltipsHtml01+d.snp_chr+self.settings.SNPMouseOverTooltipsHtml02+d.snp_pos+self.settings.SNPMouseOverTooltipsHtml03+d.snp_val+self.settings.SNPMouseOverTooltipsHtml04+self.settings.SNPMouseOverTooltipsHtml05)
                        .style("left", (d3.event.pageX) + "px")
                        .style("top", (d3.event.pageY + 20) + "px")
                        .style("position", self.settings.SNPMouseOverTooltipsPosition)
