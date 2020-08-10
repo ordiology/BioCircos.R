@@ -1135,8 +1135,61 @@ BioCircosTracklist <- function(){
   return(colVar)
 }
 
-brintTest <- function(session, msg, msg2) {
-  session$sendCustomMessage(type="brintTest",
-                             message=list(msg=msg,
-                                          msg2=msg2))
-}
+
+#' Assign the supplied node visibility values to the nodes on the circle
+#'
+#' @param session a Shiny Server session object.
+#' @param nodes a character vector the names of the nodes whose attributes are updated.
+#' @param values a character, logical or numeric vector, the new values.
+#'
+#' @examples
+#' \dontrun{
+#'   setNodeAttributes(session,
+#'                     nodes=yeastGalactodeNodeIDs,
+#'                     values=expression.vector)
+#' }
+#'
+#' @aliases setCircNodeVisibility
+#' @rdname setCircNodeVisibility
+#'
+#' @export
+
+setCircNodeVisibility <- function(session, nodes, values) {
+  session$sendCustomMessage(type="setCircNodeVisibility",
+                            message=list(nodes=nodes,
+                                         values=values))
+} #setCircNodeVisibility
+
+#------------------------------------------------------------------------------------------------------------------------
+#' Assign the supplied edge attribute values to the graph structure contained in the browser.
+#'
+#' @param session a Shiny Server session object.
+#' @param attributeName character string, the attribute to update.
+#' @param sourceNodes a character vector, the names of the source nodes of the edges
+#' @param targetNodes a character vector, the names of the target nodes of the edgees
+#' @param interactions a character vector, further identifying the specific edge whose attributes are updated.
+#' @param values a character, logical or numeric vector, the new values.
+#'
+#' @examples
+#' \dontrun{
+#'   setCircLinkVisibility(session,
+#'                     attributeName="score",
+#'                     sourceNodes=c("A", "B", "C"),
+#'                     targetNodes=c("D", "E", "A"),
+#'                     interactions=c("promotes", "promotes", "inhibits"),
+#'                     values=new.scores)
+#' }
+#'
+#' @aliases setCircLinkVisibility
+#' @rdname setCircLinkVisibility
+#'
+#' @export
+
+setCircLinkVisibility <- function(session, attributeName, sourceNodes, targetNodes, interactions, values)
+{
+  session$sendCustomMessage(type="setCircLinkVisibility",
+                            message=list(sourceNodes=sourceNodes,
+                                         targetNodes=targetNodes,
+                                         values=values))
+} # setCircLinkVisibility
+
