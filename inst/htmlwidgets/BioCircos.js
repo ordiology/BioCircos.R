@@ -470,27 +470,61 @@ HTMLWidgets.widget({
   }
 });
 
+
 //------------------------------------------------------------------------------------------------------------------------
-if(HTMLWidgets.shinyMode) Shiny.addCustomMessageHandler("brintTest", function(message){
+if(HTMLWidgets.shinyMode) Shiny.addCustomMessageHandler("setCircNodeVisibility", function(message){
+    //if (document.readyState === 'complete') {
+    try {
+      ///
+      var svg = d3.select(BioCircos01.target)
+      var x = svg.selectAll("#BioCircosSNP")
+      
+      var nodeIDs = message.nodes; // name of node
+      var values = message.values; // property of the node
+      
+      for (var i = 0; i < x[0].length; i++) {
+        ///
+        for (var j = 0; j < nodeIDs.length; j++) {
+          ///
+          if (x[0][i].__data__.snp_des == nodeIDs[j]) {
+            ///
+            x[0][i].style.visibility = values[j];
+            break;
+          }
+        }
+      }
+    } catch {}
 
-  // log("setEdgeAttributes requested")
 
-  // var attributeName = message.attributeName;
-  // var sourceNodes = message.sourceNodes;
-  // var targetNodes = message.targetNodes;
-  // var interactions = message.interactions;
-  // var values = message.values
-  console.log(message.msg)
-  console.log(message.msg2)
-//  for(var i=0; i < sourceNodes.length; i++){
-//     var id = sourceNodes[i] + "-(" + interactions[i] + ")-" + targetNodes[i];
-//     // log("edge id: " + id)
-//     var edge = self.cyj.getElementById(id)
-//     // log(edge)
-//     if(edge != undefined){
-//        // log("setting edge " + attributeName + " to " + values[i])
-//        edge.data({[attributeName]: values[i]})
-//        }
-//     } // for i
-    
-}) // brintTest
+}) // setCircNodeVisibility
+
+
+//------------------------------------------------------------------------------------------------------------------------
+if(HTMLWidgets.shinyMode) Shiny.addCustomMessageHandler("setCircLinkVisibility", function(message){
+    //if (document.readyState === 'complete') {
+    try {
+      ///
+      //have to skip the first one, as that's ALL of the links... 
+      var svg = d3.select(BioCircos01.target)
+      var x = svg.selectAll(".BioCircosLINK")
+      
+      var sourceNodes = message.sourceNodes; // name of source nodes
+      var targetNodes = message.targetNodes; // name of target nodes
+      var values = message.values; // property of the node
+      
+      for (var i = 1; i < x[0].length; i++) {
+        ///
+        link_pair = x[0][i].__data__.link_pair.split(' - ')
+        for (var j = 0; j < sourceNodes.length; j++) {
+          ///
+          if (link_pair[0] == sourceNodes[j] && link_pair[1] == targetNodes[j]) {
+            ///
+            x[0][i].style.visibility = values[j];
+            break;
+          }
+        }
+      }
+    } catch {}
+
+
+}) // setCircLinkVisibility
