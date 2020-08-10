@@ -1193,3 +1193,24 @@ setCircLinkVisibility <- function(session, attributeName, sourceNodes, targetNod
                                          values=values))
 } # setCircLinkVisibility
 
+#------------------------------------------------------------------------------------------------------------------------
+#' Assign the supplied edge attribute values to the graph structure contained in the browser.
+#'
+#' @param session a Shiny Server session object.
+#'
+#' @examples
+#' \dontrun{
+#'   setCircInvisible(session)
+#' }
+#'
+#' @aliases setCircInvisible
+#' @rdname setCircInvisible
+#'
+#' @export
+
+setCircInvisible <- function(session)
+{
+  session$sendCustomMessage(type="setCircInvisible",
+                            message="")
+} # setCircInvisible
+
